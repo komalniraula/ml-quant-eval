@@ -28,7 +28,7 @@ This repository focuses on **evaluating quantitative trading strategies** using 
 - **Data Sources**  
   - Price Data: **CRSP**  
   - Fundamental Data: **Compustat**  
-  - Risk-Free Rates: **FRED Fed Funds Rate**
+  - Risk-Free Rates: **Federal reserve board data from WRDS**
 
 ---
 
