@@ -76,6 +76,7 @@ codebase/
 │   ├── in_sample_results.csv — Performance metrics and trade logs for in-sample period (2015–2021).
 │   └── out_sample_results.csv — Performance metrics and trade logs for out-of-sample period (2022–2024).
 ├── .gitignore — Specifies files and folders to exclude from version control.
+├── requirements.txt - libraries
 └── README.md — Project overview, methodology, and instructions.
 ```
 
