@@ -87,3 +87,28 @@ codebase/
 - **knn_clustering.ipynb** — K-Nearest Neighbors clustering to form peer portfolios based on fundamentals.
 - **market_data(CRSP).ipynb** — Processing and analysis of stock price data from CRSP.
 - **value_growth_quarterly(Compustat).ipynb** — Identifying Growth and Value portfolios using Compustat data.
+
+## 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+# Clone the repository
+git clone https://github.com/komalniraula/ml-quant-eval.git
+
+# Navigate to the project directory
+cd ml-quant-eval
+
+# Install required packages
+pip install -r requirements.txt
+```
+
+### Run the Backtesting Framework
+
+```bash
+# Navigate to the backtest directory
+cd codebase/backtest
+
+# Run the backtest with default parameters
+python main.py
+```
