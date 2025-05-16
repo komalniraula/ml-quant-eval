@@ -1,13 +1,6 @@
-# The report is main_report_kn2505.pdf
-
-
 # Systematic Alpha: Mean-Reversion Trading Strategy
 
-This project implements a systematic mean-reversion trading strategy using machine learning and stochastic models. It explores the generation of alpha by constructing peer portfolios with K-Means clustering, estimating volatility with GARCH(1,1), and forecasting returns using the Ornstein-Uhlenbeck (OU) process.  
-
-> 📅 **Final Report Date:** May 15, 2025  
-> 🎓 **Institution:** New York University Stern School of Business  
-> 👤 **Author:** Komal Niraula
+This project implements a systematic mean-reversion trading strategy using machine learning and stochastic models. It explores the generation of alpha by constructing peer portfolios with K-Nearest Neighbors (KNN) clustering, estimating volatility with GARCH(1,1), and forecasting returns using the Ornstein-Uhlenbeck (OU) process.  
 
 ---
 
@@ -16,7 +9,7 @@ This project implements a systematic mean-reversion trading strategy using machi
 This research investigates whether portfolios formed based on fundamental similarity and filtered through rigorous statistical techniques can consistently deliver statistically significant alpha.
 
 Key Components:
-- **Peer Portfolio Formation:** K-Means clustering based on firm fundamentals.
+- **Peer Portfolio Formation:** K-Nearest Neighbors clustering based on firms' quarterly financial reports.
 - **Volatility Estimation:** GARCH(1,1) modeling.
 - **Forecasting:** OU Process for mean-reversion behavior.
 - **Signal Generation:** Classical and OU-based z-scores.
@@ -51,23 +44,45 @@ Key Components:
      - Long = Fed Funds + 1.5%  
      - Short = Fed Funds + 1.0%  
    - Max Holding Period: 20 Trading Days.
+   - **Liquidity Constraint:** Can only trade up to **10% of the 20-day average trading volume**.
 
 ---
 
 ## 🧩 Implementation Details
 
 - **Language:** Python 3.13  
-- **Key Libraries:** `pandas`, `numpy`, `scikit-learn`, `statsmodels`, `arch`, `joblib`, `matplotlib`, `seaborn`
+- **Key Libraries:** `pandas`, `numpy`, `scikit-learn`, `statsmodels`, `arch`, `joblib`, `matplotlib`, `seaborn`  
 - **Parallelization:** Joblib with `n_jobs=4`
 
 ---
 
-## 🚀 Getting Started
+## 📂 Project Structure
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/systematic-alpha-mean-reversion.git
-cd systematic-alpha-mean-reversion
+```
+codebase/
+├── backtest/
+│   ├── backtest_engine.py — Main backtest execution logic.
+│   ├── grid_search.py — Hyperparameter tuning and model selection.
+│   ├── portfolio_manager.py — Capital allocation and portfolio rebalancing logic.
+│   ├── performance.py — Calculates Sharpe, Sortino, Alpha, Hit Rate, Drawdown, etc.
+│   ├── signal_generator.py — Generates trading signals based on z-scores.
+│   ├── trade.py — Trade execution logic and transaction cost adjustments.
+│   ├── run.py — Main script to run complete backtest pipeline.
+│   ├── main.py — Entry point for modular testing and debugging.
+│   └── backtest.ipynb — Jupyter Notebook for exploratory backtesting.
+├── database/
+│   └── corr_coin.csv — Final list of identified pairs (with correlation and cointegration metrics).
+├── test_reports/
+│   ├── in_sample_results.csv — Performance metrics and trade logs for in-sample period (2015–2021).
+│   └── out_sample_results.csv — Performance metrics and trade logs for out-of-sample period (2022–2024).
+├── .gitignore — Specifies files and folders to exclude from version control.
+└── README.md — Project overview, methodology, and instructions.
+```
 
-# Run backtest (example script)
-python run_backtest.py
+## 📓 Jupyter Notebooks
+
+- **fed_rates_data(FRB WRDS).ipynb** — Data collection and preprocessing for Federal Funds Rates.
+- **GARCH_OU_analysis.ipynb** — GARCH volatility modeling and OU parameter estimation.
+- **knn_clustering.ipynb** — K-Nearest Neighbors clustering to form peer portfolios based on fundamentals.
+- **market_data(CRSP).ipynb** — Processing and analysis of stock price data from CRSP.
+- **value_growth_quarterly(Compustat).ipynb** — Identifying Growth and Value portfolios using Compustat data.
