@@ -1,4 +1,4 @@
-# Systematic Alpha: Mean-Reversion Trading Strategy
+# Designing Alpha: Machine Learning & Stochastic Models for Systematic Trading
 
 This project implements a systematic mean-reversion trading strategy using machine learning and stochastic models. It explores the generation of alpha by constructing peer portfolios with K-Nearest Neighbors (KNN) clustering, estimating volatility with GARCH(1,1), and forecasting returns using the Ornstein-Uhlenbeck (OU) process.  
 
