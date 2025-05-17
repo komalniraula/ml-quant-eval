@@ -59,15 +59,40 @@ param_grid = {
 
 You can modify the parameters by changing the values in these lists. The backtest will automatically run for all combinations of parameters.
 
+## 🚀 Getting Started
+
+### Clone the Repository
+
+```bash
+# Clone the repository
+git clone https://github.com/komalniraula/ml-quant-eval.git
+
+# Navigate to the project directory
+cd ml-quant-eval
+
+# Install required packages
+pip install -r requirements.txt
+
+# Run notebooks in sequence to prepare data
+jupyter notebook value\&growth_quaterly\(compustat\).ipynb
+jupyter notebook market_data\(CRSP\).ipynb
+jupyter notebook fed_rates_data\(FRB\ WRDS\).ipynb
+jupyter notebook knn_clustering.ipynb
+jupyter notebook "GARCH, OU & data analysis.ipynb"
+
+Note: Ensure that all datasets are placed in the appropriate folders within the codebase directory structure after running these notebooks. The backtest framework expects the prepared data to be in the same folder.
+
+# Navigate to the backtest directory
+cd codebase/backtest
+
+# Run the backtest with default parameters
+python main.py
+
 ### Interactive Analysis
 
-For interactive exploration and visualization, use the Jupyter notebook:
+For interactive exploration, use the Jupyter notebook:
 
 ```bash
 cd codebase/backtest
 jupyter notebook backtest.ipynb
 ```
-
-## GitHub Repository
-
-https://github.com/komalniraula/ml-quant-eval
