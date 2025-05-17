@@ -82,11 +82,15 @@ codebase/
 
 ## 📓 Jupyter Notebooks
 
-- **fed_rates_data(FRB WRDS).ipynb** — Data collection and preprocessing for Federal Funds Rates.
-- **GARCH_OU_analysis.ipynb** — GARCH volatility modeling and OU parameter estimation.
-- **knn_clustering.ipynb** — K-Nearest Neighbors clustering to form peer portfolios based on fundamentals.
-- **market_data(CRSP).ipynb** — Processing and analysis of stock price data from CRSP.
-- **value_growth_quarterly(Compustat).ipynb** — Identifying Growth and Value portfolios using Compustat data.
+**Important**: The following notebooks must be executed in this sequence before running the backtest to collect and prepare the data properly:
+
+1. **value&growth_quaterly(compustat).ipynb** — Identifying Growth and Value portfolios using Compustat data.
+2. **market_data(CRSP).ipynb** — Processing and analysis of stock price data from CRSP.
+3. **fed_rates_data(FRB WRDS).ipynb** — Data collection and preprocessing for Federal Funds Rates.
+4. **knn_clustering.ipynb** — K-Nearest Neighbors clustering to form peer portfolios based on fundamentals.
+5. **GARCH, OU & data analysis.ipynb** — GARCH volatility modeling and OU parameter estimation.
+
+After running these notebooks in sequence, you can proceed with the backtesting process.
 
 ## 🚀 Getting Started
 
@@ -101,14 +105,18 @@ cd ml-quant-eval
 
 # Install required packages
 pip install -r requirements.txt
-```
 
-### Run the Backtesting Framework
+# Run notebooks in sequence to prepare data
+jupyter notebook value\&growth_quaterly\(compustat\).ipynb
+jupyter notebook market_data\(CRSP\).ipynb
+jupyter notebook fed_rates_data\(FRB\ WRDS\).ipynb
+jupyter notebook knn_clustering.ipynb
+jupyter notebook "GARCH, OU & data analysis.ipynb"
 
-```bash
+Note: Ensure that all datasets are placed in the appropriate folders within the codebase directory structure after running these notebooks. The backtest framework expects the prepared data to be in the same folder.
+
 # Navigate to the backtest directory
 cd codebase/backtest
 
 # Run the backtest with default parameters
 python main.py
-```
