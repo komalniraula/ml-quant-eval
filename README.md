@@ -4,6 +4,16 @@ This project implements a systematic mean-reversion trading strategy using machi
 
 ---
 
+## 📄 Final Report
+
+You can find the detailed methodology, model design choices, and results discussion in the full research report:
+
+📘 **[`main_report_kn2505.pdf`](./main_report_kn2505.pdf)**
+
+This document includes background motivation, statistical analysis, model construction logic, validation setup, and evaluation of trading performance. It's intended as the final submission for academic evaluation and documentation.
+
+---
+
 ## 📖 Project Overview
 
 This research investigates whether portfolios formed based on fundamental similarity and filtered through rigorous statistical techniques can consistently deliver statistically significant alpha.
